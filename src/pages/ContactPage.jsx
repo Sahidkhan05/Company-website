@@ -1,8 +1,10 @@
 
 import React, { useEffect } from 'react'
-import ContactForm from '../components/Contactform'
+
 import Navbar from '../components/NavBar'
 import FooterSection from '../components/FooterSection'
+import ContactForm from '../components/Contactform'
+
 
 const ContactPage = () => {
      useEffect(() => {
