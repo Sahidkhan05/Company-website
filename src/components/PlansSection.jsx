@@ -4,75 +4,65 @@ import { useNavigate } from "react-router-dom";
 export default function PlansSection() {
   const navigate = useNavigate();
 
-  const plans = [
+  const planFields = [
     {
-      name: "Basic",
-      price: "₹2,999 + ₹1,500 (Setup)",
-      note: "Excl. GST",
-      features: [
-        "School website + Dashboard access",
-        "Student & Teacher Management",
-        "Attendance & Fee tracking",
-        "Basic performance reports",
+      title: "School Management Solutions",
+      desc: "Automate attendance, fees, and student records — simplify your school operations with smart ERP integration.",
+      points: [
+        "✔ Student & Staff Management",
+        "✔ Fees & Attendance Tracking",
+        "✔ Parent App Integration",
       ],
-      path: "/plans/basic",
+      path: "/plans/school",
     },
     {
-      name: "Standard",
-      price: "₹5,999 + ₹1,500 (Setup)",
-      note: "Excl. GST",
-      features: [
-        "Everything in Basic plan",
-        "Online Admission Form",
-        "Exam & Timetable Management",
-        "Homework & Notifications",
+      title: "Smart Hospital Management",
+      desc: "Manage appointments, patient records, and communication efficiently with digital hospital solutions.",
+      points: [
+        "✔ Digital Patient Management",
+        "✔ Automated Appointments",
+        "✔ AI Chatbot Integration",
       ],
-      path: "/plans/standard",
+      path: "/plans/hospital",
     },
     {
-      name: "Premium",
-      price: "₹9,999 + ₹1,500 (Setup)",
-      note: "Excl. GST",
-      features: [
-        "Everything in Standard plan",
-        "AI Insights & Analytics",
-        "Library & Document Management",
-        "Multi-language Support",
+      title: "Business Automation & Growth",
+      desc: "Streamline your business using AI chatbots, CRM tools, and digital dashboards for faster growth.",
+      points: [
+        "✔ CRM & Lead Management",
+        "✔ Payment & Billing Automation",
+        "✔ Real-time Analytics",
       ],
-      path: "/plans/premium",
+      path: "/plans/business",
     },
   ];
 
   return (
-    <section className="bg-white py-20 px-6 md:px-24">
+    <section id="plans-section" className="bg-white py-20 px-6 md:px-24">
       <div className="text-center mb-14">
         <h2 className="text-3xl md:text-4xl font-bold text-blue-600 mb-3">
           Our Plans
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Choose a plan that fits your school’s digital growth — scalable, smart, and affordable.
+          Choose the right digital solution for your school, hospital, or business.
         </p>
       </div>
 
-      {/* Plan Cards */}
+      {/* Cards Section */}
       <div className="grid md:grid-cols-3 gap-10">
-        {plans.map((plan, index) => (
+        {planFields.map((plan, index) => (
           <div
             key={index}
             className="bg-blue-50 border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition duration-300 p-8 text-center"
           >
             <h3 className="text-2xl font-semibold text-blue-600 mb-3">
-              {plan.name}
+              {plan.title}
             </h3>
-
-            <p className="text-gray-800 text-xl font-bold mb-1">
-              {plan.price}
-            </p>
-            <p className="text-gray-500 text-sm mb-6">{plan.note}</p>
+            <p className="text-gray-700 mb-5">{plan.desc}</p>
 
             <ul className="text-gray-700 mb-6 space-y-2 text-sm text-left">
-              {plan.features.map((feature, i) => (
-                <li key={i}>✔ {feature}</li>
+              {plan.points.map((p, i) => (
+                <li key={i}>{p}</li>
               ))}
             </ul>
 
@@ -80,7 +70,7 @@ export default function PlansSection() {
               onClick={() => navigate(plan.path)}
               className="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition"
             >
-              More Details
+              View Details
             </button>
           </div>
         ))}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,10 +16,31 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 💡 Add EmailJS or Formspree integration here
-    console.log(formData);
-    setSuccess(true);
-    setFormData({ name: "", email: "", message: "" });
+
+    emailjs
+      .send(
+        "service_u6afvfc",       // Your Service ID
+        "template_q9prnlp",      // Your Template ID
+        {
+          name: formData.name,
+          email: formData.email,
+          number: formData.number,
+          message: formData.message,
+          time: new Date().toLocaleString(), // Submitted at
+        },
+        "3UaRFs_VWn2gRuLkh"      // Your Public Key
+      )
+      .then(
+        (result) => {
+          console.log("Email sent:", result.text);
+          setSuccess(true);
+          setFormData({ name: "", email: "", number:"",  message: "" });
+        },
+        (error) => {
+          console.log("Email send error:", error.text);
+          alert("Something went wrong. Please try again.");
+        }
+      );
   };
 
   return (
@@ -27,7 +49,7 @@ export default function ContactForm() {
         {/* Left Side - Image */}
         <div className="md:w-1/2 h-120">
           <img
-            src="/contact us.jpg" // 👈 exact file name
+            src="/contact us.jpg"
             alt="Contact Us"
             className="w-full h-full object-cover"
           />
@@ -58,6 +80,18 @@ export default function ContactForm() {
               required
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
             />
+
+             <input
+              type="tel"
+              name="number"
+              value={formData.number}
+              onChange={handleChange}
+              placeholder="Your Contact Number"
+              required
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+
+
             <textarea
               name="message"
               value={formData.message}

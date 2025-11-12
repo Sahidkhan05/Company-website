@@ -52,10 +52,10 @@ export default function FooterSection() {
           <h4 className="text-xl font-semibold mb-4">Contact</h4>
           <ul className="space-y-3 text-gray-200">
             <li className="flex items-center gap-2">
-              <Mail size={18} /> support@lnavonous.com
+              <Mail size={18} /> navonousai@gmail.com
             </li>
             <li className="flex items-center gap-2">
-              <Phone size={18} /> +91 98765 43210
+              <Phone size={18} /> +91 9351600553
             </li>
             <li className="flex items-center gap-2">
               <MapPin size={18} /> Jaipur, Rajasthan, India

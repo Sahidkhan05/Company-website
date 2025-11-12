@@ -1,63 +1,81 @@
 import React from "react";
-import Navbar from "../components/NavBar";
-import FooterSection from "../components/FooterSection";
-import WhyChooseSection from "../components/WhyChooseSection"; // optional
 import { useNavigate } from "react-router-dom";
 
 export default function PremiumPlan() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <div className="bg-white shadow-lg rounded-3xl p-8 border-l-8 border-yellow-500 hover:shadow-2xl transition duration-300">
+      <h2 className="text-3xl font-bold text-yellow-600 mb-6 text-center">
+        Premium Plan
+      </h2>
 
-      {/* Header Section */}
-      <section className="pt-32 pb-20 px-6 md:px-24  bg-blue-600 text-center text-white">
-        <h1 className="text-4xl font-bold mb-3">Premium Plan</h1>
-        <p className="text-lg max-w-2xl mx-auto">
-          For institutions that want complete digital transformation and automation.
-        </p>
-      </section>
-
-      {/* Plan Details */}
-      <section className="py-16 px-6 md:px-24">
-        <div className="bg-white shadow-xl rounded-2xl p-10 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">
-            ₹6,999{" "}
-            <span className="text-gray-500 text-lg">
-              + One Time Setup ₹3,500 (Excl. GST)
-            </span>
-          </h2>
-
-          <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
-            Includes everything in Standard Plan, plus:
+      {/* Responsive 2-column layout */}
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Left Side — BOS Plan */}
+        <div className="bg-yellow-50 p-6 rounded-2xl border border-yellow-200">
+          <h3 className="text-2xl font-semibold text-yellow-700 mb-3">
+            BOS Plan
           </h3>
 
-          <ul className="space-y-3 text-gray-700 text-lg">
-            <li>✔ AI-powered performance insights (student weakness, prediction reports)</li>
-            <li>✔ Library management (issue/return)</li>
-            <li>✔ Document management (TC, Students & Teachers certificates, ID cards)</li>
-            <li>✔ Staff payroll + salary slips</li>
-            <li>✔ Advanced analytics dashboard (growth trends, revenue, performance)</li>
-            <li>✔ Multi-language support (English + regional)</li>
+          <p className="text-gray-700 mb-3 leading-relaxed">
+            Plan: ₹15,000/- <br />
+            One Time Setup: ₹20,000/- <br />
+            <span className="text-gray-500">(Excl. GST)</span>
+          </p>
+
+          <h4 className="font-semibold text-gray-800 mb-2">Includes:</h4>
+          <ul className="space-y-2 text-gray-700">
+            <li>✔ All features of Standard Plan</li>
+            <li>✔ Advanced Analytics Dashboard</li>
+            <li>✔ Library & Document Management</li>
+            <li>✔ Payroll and Salary Slip System</li>
+            <li>✔ Multi-language Support</li>
+            <li>✔ AI-based Insights & Reports</li>
           </ul>
 
-          {/* CTA Button */}
-          <div className="text-center mt-10">
-            <button
-              onClick={() => navigate("/contact")}
-              className="bg-blue-700 text-white px-8 py-3 rounded-lg text-lg shadow hover:bg-blue-800 transition"
-            >
-              Contact for More Details
-            </button>
+          <div className="mt-4 text-gray-600 font-medium">
+            DATA OF 3000 INDIVIDUALS
           </div>
         </div>
-      </section>
 
-      {/* Optional: Why Choose Section */}
-      <WhyChooseSection />
+        {/* Right Side — Chatbot Plan */}
+        <div className="bg-orange-50 p-6 rounded-2xl border border-orange-200">
+          <h3 className="text-2xl font-semibold text-orange-700 mb-3">
+            Chatbot Plan
+          </h3>
 
-      <FooterSection />
+          <p className="text-gray-700 mb-3 leading-relaxed">
+            Plan: ₹11,999/- <br />
+            One Time Setup: ₹7,000/- <br />
+            <span className="text-gray-500">(Excl. GST)</span>
+          </p>
+
+          <h4 className="font-semibold text-gray-800 mb-2">Features:</h4>
+          <ul className="space-y-2 text-gray-700">
+            <li>✔ AI Chatbot with Full Automation</li>
+            <li>✔ Multi-Department Query Handling</li>
+            <li>✔ Smart Notifications & Reminders</li>
+            <li>✔ Integration with ERP Dashboard</li>
+            <li>✔ Advanced Convo Analytics</li>
+          </ul>
+
+          <div className="mt-4 text-gray-600 font-medium">
+            12000 CONVOS
+            DATA OF 1500 INDIVIDUALS
+          </div>
+        </div>
+      </div>
+
+      {/* Button */}
+      <div className="text-center mt-10">
+        <button
+          onClick={() => navigate("/contact")}
+          className="bg-yellow-600 text-white px-8 py-3 rounded-lg text-lg shadow hover:bg-yellow-700 transition"
+        >
+          Contact for More Details
+        </button>
+      </div>
     </div>
   );
 }
