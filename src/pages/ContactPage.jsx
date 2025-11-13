@@ -60,13 +60,20 @@ const ContactPage = () => {
 
       <section className="max-w-6xl mx-auto py-20 px-6">
         <div className="md:flex md:items-center md:gap-12 bg-white rounded-2xl shadow-lg overflow-hidden">
-          {/* Left Side - Image */}
+          {/* Left Side - Optimized Image */}
           <div className="md:w-1/2 h-120">
-            <img
-              src="/contact us.jpg"
-              alt="Contact Us"
-              className="w-full h-full object-cover"
-            />
+            <picture>
+              {/* ✅ Use WebP first for faster loading */}
+              <source srcSet="/contact us.webp" type="image/webp" />
+              <source srcSet="/contact us.jpg" type="image/jpeg" />
+              <img
+                src="/contact us.jpg"
+                alt="Contact Us"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </picture>
           </div>
 
           {/* Right Side - Form */}

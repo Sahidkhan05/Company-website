@@ -5,12 +5,15 @@ export default function BusinessSection() {
     <section className="bg-white py-20 px-6 md:px-24">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10 shadow-lg rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300">
         
-        {/* Right Side - Image */}
+        {/* Right Side - Optimized Image */}
         <div className="flex-1">
           <img
             src="/business.jpg"
             alt="Business Automation"
-            className="w-full rounded-2xl shadow-md hover:scale-105 transition-transform duration-300"
+            loading="lazy" // ✅ Lazy loading for performance
+            width="800"
+            height="600"
+            className="w-full rounded-2xl shadow-md hover:scale-105 transition-transform duration-300 object-cover"
           />
         </div>
 

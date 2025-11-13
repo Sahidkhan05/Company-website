@@ -5,12 +5,15 @@ export default function SchoolServicesSection() {
     <section className="py-20 px-6 md:px-24 bg-gray-50">
       <div className="grid md:grid-cols-2 items-center gap-12 bg-white rounded-2xl shadow-lg p-10">
         
-        {/* Left Image */}
+        {/* Left Image - Optimized */}
         <div className="flex justify-center">
           <img
             src="/school.jpg"
             alt="School Management"
-            className="w-[90%] max-w-md rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
+            loading="lazy" // ✅ Lazy load image for better performance
+            width="800"
+            height="600"
+            className="w-[90%] max-w-md rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 object-cover"
           />
         </div>
 

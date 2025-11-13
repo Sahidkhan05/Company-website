@@ -1,5 +1,5 @@
 import React from "react";
-import { href, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutPreview() {
   const navigate = useNavigate();
@@ -8,13 +8,22 @@ export default function AboutPreview() {
     <section className="bg-gray-50 py-20 px-6 md:px-24">
       {/* 🔹 Main Container with Shadow */}
       <div className="bg-white rounded-2xl shadow-xl p-10 md:p-14 grid md:grid-cols-2 items-center gap-12">
+        
         {/* Left Image Section */}
         <div className="flex justify-center">
-          <img
-            src="/about image.jpg"
-            alt="About Our Company"
-            className="w-[85%] max-w-md rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
-          />
+          {/* ✅ Optimized + Lazy Loaded Image */}
+          <picture>
+            {/* WebP format for better compression */}
+            <source srcSet="/about image.webp" type="image/webp" />
+            <source srcSet="/about image.jpg" type="image/jpeg" />
+            <img
+              src="/about image.jpg"
+              alt="About Our Company"
+              loading="lazy"
+              decoding="async"
+              className="w-[85%] max-w-md rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
+            />
+          </picture>
         </div>
 
         {/* Right Text Section */}
@@ -32,12 +41,13 @@ export default function AboutPreview() {
             From websites and software to intelligent chatbots, our goal is to
             bring ideas to life through technology and creativity.
           </p>
+
           <button
-  onClick={() => navigate("/about")} // simple navigation, no scroll
-  className="bg-blue-600 text-white px-8 py-2 rounded-lg shadow hover:bg-blue-700 transition"
->
-  Read More
-</button>
+            onClick={() => navigate("/about")}
+            className="bg-blue-600 text-white px-8 py-2 rounded-lg shadow hover:bg-blue-700 transition"
+          >
+            Read More
+          </button>
         </div>
       </div>
     </section>
