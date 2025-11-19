@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
 
@@ -31,12 +32,12 @@ const HeroSection = () => {
               Get Started
             </button>
 
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="border border-white text-white font-semibold px-6 py-3 rounded-full hover:bg-white hover:text-blue-600 transition w-full sm:w-auto text-center"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

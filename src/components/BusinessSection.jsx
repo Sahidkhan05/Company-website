@@ -1,23 +1,24 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function BusinessSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-white py-20 px-6 md:px-24">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10 shadow-lg rounded-3xl p-8 hover:shadow-xl transition-shadow duration-300">
-        
-        {/* Right Side - Optimized Image */}
+
         <div className="flex-1">
           <img
             src="/business.jpg"
             alt="Business Automation"
-            loading="lazy" // ✅ Lazy loading for performance
+            loading="lazy"
             width="800"
             height="600"
             className="w-full rounded-2xl shadow-md hover:scale-105 transition-transform duration-300 object-cover"
           />
         </div>
 
-        {/* Left Side - Content */}
         <div className="flex-1 text-center md:text-left">
           <h2 className="text-3xl font-bold text-blue-600 mb-4">
             Business Automation & Growth
@@ -36,7 +37,7 @@ export default function BusinessSection() {
           </ul>
 
           <button
-            onClick={() => (window.location.href = "/contact")}
+            onClick={() => navigate("/contact")}
             className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
           >
             Get Free Consultation
