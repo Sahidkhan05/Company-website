@@ -13,17 +13,14 @@ const ContactPage = () => {
 
   const [success, setSuccess] = useState(false);
 
-  // 👇 Page top se start ho
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // Page top se start ho
   }, []);
 
-  // 👇 Input change handler
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // 👇 Email send handler
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -36,7 +33,7 @@ const ContactPage = () => {
           email: formData.email,
           number: formData.number,
           message: formData.message,
-          time: new Date().toLocaleString(), // Submitted at
+          time: new Date().toLocaleString(),
         },
         "3UaRFs_VWn2gRuLkh" // Your Public Key
       )
@@ -55,15 +52,15 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="mt-10 bg-gray-100">
+    <div className="bg-gray-100 min-h-screen">
       <Navbar />
 
-      <section className="max-w-6xl mx-auto py-20 px-6">
+      <section className="max-w-6xl mx-auto py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="md:flex md:items-center md:gap-12 bg-white rounded-2xl shadow-lg overflow-hidden">
-          {/* Left Side - Optimized Image */}
-          <div className="md:w-1/2 h-120">
+          
+          {/* Left Side - Image */}
+          <div className="md:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[500px]">
             <picture>
-              {/* ✅ Use WebP first for faster loading */}
               <source srcSet="/contact us.webp" type="image/webp" />
               <source srcSet="/contact us.jpg" type="image/jpeg" />
               <img
@@ -77,8 +74,8 @@ const ContactPage = () => {
           </div>
 
           {/* Right Side - Form */}
-          <div className="md:w-1/2 p-8">
-            <h2 className="text-3xl font-bold text-blue-600 mb-6">
+          <div className="md:w-1/2 p-6 sm:p-8 md:p-10">
+            <h2 className="text-2xl sm:text-3xl md:text-3xl font-bold text-blue-600 mb-6">
               Get in Touch
             </h2>
 
@@ -134,6 +131,7 @@ const ContactPage = () => {
               )}
             </form>
           </div>
+
         </div>
       </section>
 

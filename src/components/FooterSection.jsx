@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Copy } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function FooterSection() {
@@ -52,10 +52,16 @@ export default function FooterSection() {
           <h4 className="text-xl font-semibold mb-4">Contact</h4>
           <ul className="space-y-3 text-gray-200">
             <li className="flex items-center gap-2">
-              <Mail size={18} /> navonousai@gmail.com
+              <Mail size={18} /> 
+              <a href="mailto:navonousai@gmail.com" className="hover:underline">
+                navonousai@gmail.com
+              </a>
             </li>
             <li className="flex items-center gap-2">
-              <Phone size={18} /> +91 9351600553
+              <Phone size={18} /> 
+              <a href="tel:+919351600553" className="hover:underline">
+                +91 9351600553
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <MapPin size={18} /> Jaipur, Rajasthan, India

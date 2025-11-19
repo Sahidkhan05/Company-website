@@ -16,17 +16,17 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <Link to="/" className="hover:text-gray-200 text-lg font-medium">Home</Link>
-          <Link to="/about" className="hover:text-gray-200 text-lg font-medium">About</Link>
-          <Link to="/services" className="hover:text-gray-200 text-lg font-medium">Services</Link>
-          <Link to="/careers" className="hover:text-gray-200 text-lg font-medium">Careers</Link>
-          <Link to="/contact" className="hover:text-gray-200 text-lg font-medium">Contact</Link>
+          <Link to="/" className="hover:text-gray-400 text-lg font-medium transition">Home</Link>
+          <Link to="/about" className="hover:text-gray-400 text-lg font-medium transition">About</Link>
+          <Link to="/services" className="hover:text-gray-400 text-lg font-medium transition">Services</Link>
+          <Link to="/careers" className="hover:text-gray-400 text-lg font-medium transition">Careers</Link>
+          <Link to="/contact" className="hover:text-gray-400 text-lg font-medium transition">Contact</Link>
         </div>
 
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-white focus:outline-none"
+          className="md:hidden text-blue-600 focus:outline-none"
         >
           {isOpen ? (
             <svg
@@ -53,15 +53,13 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-blue-700 space-y-2 px-6 pb-4">
-          <Link to="/" onClick={toggleMenu} className="block hover:text-gray-200">Home</Link>
-          <Link to="/about" onClick={toggleMenu} className="block hover:text-gray-200">About</Link>
-          <Link to="/services" onClick={toggleMenu} className="block hover:text-gray-200">Services</Link>
-          <Link to="/careers" onClick={toggleMenu} className="block hover:text-gray-200">Careers</Link>
-          <Link to="/contact" onClick={toggleMenu} className="block hover:text-gray-200">Contact</Link>
-        </div>
-      )}
+      <div className={`md:hidden bg-blue-700 px-6 pb-4 space-y-2 transition-all duration-300 ${isOpen ? "block" : "hidden"}`}>
+        <Link to="/" onClick={toggleMenu} className="block text-white hover:text-gray-300">Home</Link>
+        <Link to="/about" onClick={toggleMenu} className="block text-white hover:text-gray-300">About</Link>
+        <Link to="/services" onClick={toggleMenu} className="block text-white hover:text-gray-300">Services</Link>
+        <Link to="/careers" onClick={toggleMenu} className="block text-white hover:text-gray-300">Careers</Link>
+        <Link to="/contact" onClick={toggleMenu} className="block text-white hover:text-gray-300">Contact</Link>
+      </div>
     </nav>
   );
 }
