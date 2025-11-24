@@ -4,7 +4,7 @@ export default function MissionVision() {
   const data = [
     {
       title: "Our Mission",
-      desc: "Our mission is to empower startups, schools, and enterprises with digital transformation through reliable and scalable web solutions.",
+      desc: "Our mission is to empower startups, schools, and enterprises by delivering innovative, reliable, and scalable digital solutions. We aim to simplify technology for every business by providing modern web applications that enhance efficiency, improve user experience, and support long-term growth. Through continuous improvement and a client-first approach, we help organizations achieve smooth digital transformation and stay ahead in the fast-moving digital world.",
     },
     {
       title: "Our Vision",
@@ -13,24 +13,45 @@ export default function MissionVision() {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto py-20 px-6 ">
-      <h2 className="text-center text-4xl font-bold text-blue-600 mb-12">
-        Mission & Vision
-      </h2>
+   <section class="bg-gray-50 py-16 px-6 md:px-20">
+  <div class="max-w-5xl mx-auto">
 
-      <div className="grid md:grid-cols-2 gap-10">
-        {data.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all border-t-4 border-blue-600"
-          >
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800">
-              {item.title}
-            </h3>
-            <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    
+    <div class="bg-white shadow-lg rounded-2xl p-8 mb-12 border-l-4 border-blue-600">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Mission</h2>
+      <p class="text-gray-600 leading-relaxed text-lg">
+        Our mission is to empower startups, schools, and enterprises by delivering
+        innovative, reliable, and scalable digital solutions. We aim to simplify
+        technology for every business through modern web applications, advanced
+        BOS (Billing/Operating Systems), and intelligent chatbot solutions that
+        automate workflows and enhance customer interaction.
+        <br /><br />
+        We focus on improving efficiency, boosting user experience, and
+        supporting long-term growth. With continuous innovation and a
+        client-first approach, we help organizations achieve seamless digital
+        transformation and stay ahead in the fast-moving digital world.
+      </p>
+    </div>
+
+    
+    <div class="bg-white shadow-lg rounded-2xl p-8 border-l-4 border-green-600">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Vision</h2>
+      <p class="text-gray-600 leading-relaxed text-lg">
+        Our vision is to become a trusted global tech company known for
+        innovation, design excellence, and strong long-term client relationships.
+        We aim to build digital solutions that not only solve real-world problems
+        but also create meaningful impact for startups, schools, and enterprises
+        worldwide.
+        <br /><br />
+        We strive to lead the industry with future-ready technologies,
+        intelligent automation, and user-centric design—earning the confidence
+        of clients through consistent quality, transparency, and unmatched
+        support.
+      </p>
+    </div>
+
+  </div>
+</section>
+
   );
 }
