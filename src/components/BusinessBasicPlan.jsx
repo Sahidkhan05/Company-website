@@ -17,11 +17,10 @@ export default function BusinessBasicPlan() {
             BOS Plan
           </h3>
 
-          <p className="text-gray-700 mb-3">
-            <strong>Plan:@3000/-</strong> <br />+
-            <br />
-            One time Setup: <strong>@5000/-</strong> <br />
-            Excl GST
+          <p className="text-gray-700 mb-3 leading-relaxed">
+            Plan: ₹3,000/- <br />
+            One Time Setup: ₹4,000/- <br />
+            <span className="text-gray-500">(Excl. GST)</span>
           </p>
 
           <ul className="space-y-2 text-gray-700">
@@ -45,11 +44,10 @@ export default function BusinessBasicPlan() {
             Chatbot Plan
           </h3>
 
-          <p className="text-gray-700 mb-3">
-            <strong>Plan:@2999/-</strong> <br />+
-            <br />
-            One time Setup: <strong>@1500/-</strong> <br />
-            Excl GST
+          <p className="text-gray-700 mb-3 leading-relaxed">
+            Plan: ₹1,500/- <br />
+            One Time Setup: ₹1,500/- <br />
+            <span className="text-gray-500">(Excl. GST)</span>
           </p>
 
           <ul className="space-y-2 text-gray-700">

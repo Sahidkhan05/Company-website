@@ -19,8 +19,8 @@ export default function BasicPlan() {
           </h3>
 
           <p className="text-gray-700 mb-3 leading-relaxed">
-            Plan: ₹4,000/- <br />
-            One Time Setup: ₹5,000/- <br />
+            Plan: ₹2,500/- <br />
+            One Time Setup: ₹3,000/- <br />
             <span className="text-gray-500">(Excl. GST)</span>
           </p>
 
@@ -46,8 +46,8 @@ export default function BasicPlan() {
           </h3>
 
           <p className="text-gray-700 mb-3 leading-relaxed">
-            Plan: ₹2,999/- <br />
-            One Time Setup: ₹1,500/- <br />
+            Plan: ₹1,000/- <br />
+            One Time Setup: ₹1,000/- <br />
             <span className="text-gray-500">(Excl. GST)</span>
           </p>
 

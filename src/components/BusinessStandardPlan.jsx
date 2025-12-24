@@ -15,11 +15,10 @@ export default function BusinessStandardPlan() {
         <div className="bg-yellow-50 p-6 rounded-2xl border border-yellow-200">
           <h3 className="text-2xl font-semibold text-yellow-700 mb-3">BOS Plan</h3>
 
-          <p className="text-gray-700 mb-3">
-            <strong>Plan:@6500/-</strong> <br />+
-            <br />
-            One time Setup: <strong>@8000/-</strong> <br />
-            Excl GST
+          <p className="text-gray-700 mb-3 leading-relaxed">
+            Plan: ₹5,000/- <br />
+            One Time Setup: ₹6,000/- <br />
+            <span className="text-gray-500">(Excl. GST)</span>
           </p>
 
           <ul className="space-y-2 text-gray-700">
@@ -42,11 +41,10 @@ export default function BusinessStandardPlan() {
         <div className="bg-amber-50 p-6 rounded-2xl border border-amber-200">
           <h3 className="text-2xl font-semibold text-amber-700 mb-3">Chatbot Plan</h3>
 
-          <p className="text-gray-700 mb-3">
-            <strong>Plan:@6999/-</strong> <br />+
-            <br />
-            One time Setup: <strong>@3500/-</strong> <br />
-            Excl GST
+        <p className="text-gray-700 mb-3 leading-relaxed">
+            Plan: ₹3,500/- <br />
+            One Time Setup: ₹3,500/- <br />
+            <span className="text-gray-500">(Excl. GST)</span>
           </p>
 
           <ul className="space-y-2 text-gray-700">
