@@ -15,7 +15,7 @@ export default function CareersPage() {
     email: "",
     number: "",
     message: "",
-    resume: null,
+    
   });
 
   const jobs = [
@@ -97,45 +97,55 @@ export default function CareersPage() {
     },
   ];
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    setFormData({
-      ...formData,
-      [name]: files ? files[0] : value,
-    });
-  };
+ const handleChange = (e) => {
+  const { name, value } = e.target;
+  setFormData({
+    ...formData,
+    [name]: value,
+  });
+};
 
-  const handleSubmit = (e) => {
+
+ const handleSubmit = (e) => {
   e.preventDefault();
 
   emailjs
     .send(
-      "service_u6afvfc",
-      "template_career", // ✅ HR TEMPLATE
+      "service_533ch0j",
+      "template_glfc7gp", // (abhi jo use ho raha hai)
       {
-        job: applyJob.title, // ✅ JOB TITLE
+        job: applyJob.title,
         name: formData.name,
         email: formData.email,
         number: formData.number,
-        message: formData.message,
+        message:
+          formData.message ||
+          "Resume shared via Drive / will be shared separately",
         time: new Date().toLocaleString(),
       },
-      "3UaRFs_VWn2gRuLkh"
+      "QrYHtpLLT4YT7T-b7"
     )
     .then(() => {
       setSuccess(true);
-      setTimeout(() => setSuccess(false), 3000);
-      setApplyJob(null);
-      setFormData({
-        name: "",
-        email: "",
-        number: "",
-        message: "",
-        resume: null,
-      });
+
+      // ✅ 2.5 sec tak message dikhega
+      setTimeout(() => {
+        setSuccess(false);
+        setApplyJob(null); // popup band
+        setFormData({
+          name: "",
+          email: "",
+          number: "",
+          message: "",
+        });
+      }, 2500);
     })
-    .catch(() => alert("Something went wrong. Please try again."));
+    .catch((err) => {
+      console.error("EmailJS failed:", err);
+      alert("Email send failed. Please try again.");
+    });
 };
+
 
 
   return (
@@ -261,10 +271,10 @@ export default function CareersPage() {
                   </label>
                   <input
                     type="file"
-                    name="resume"
+                    
                     accept=".pdf"
                     required
-                    onChange={handleChange}
+                    
                     className="w-full border p-2 rounded"
                   />
                   <p className="text-xs text-gray-500 mt-1">
@@ -288,10 +298,12 @@ export default function CareersPage() {
                 </button>
 
                 {success && (
-                  <p className="text-green-600 text-center font-semibold">
-                    ✅ Application submitted successfully!
-                  </p>
-                )}
+  <p className="text-green-600 text-center font-semibold">
+    Thank you for applying! <br />
+    Our team has received your application and will reach out to you shortly.
+  </p>
+)}
+
               </form>
             </div>
           </div>
